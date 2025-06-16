@@ -1,9 +1,6 @@
-# Level 0
+# Level 1
 Solution:
 after you open link, open inspector check html code there you can find password
-
-# Level 1
-Solution in Level 1 is same for Level 0
 
 # Level 2
 So solution in this case is a bit hard to explain but basicly 
