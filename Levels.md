@@ -44,3 +44,5 @@ Access granted. The password for natas5 is 0n35PkggAPm2zbEpOU802c0x0Msn1ToK #you
 </body>
 </html>
 ```
+# Level 5
+```Visiting the website returns the following text: “Access disallowed. You are not logged in”. The website should determine that we are logged in through a cookie. So, by opening the developer tools and going to the ‘Storage’ tab, we can see the ‘Cookies’ section. Here we find a cookie named ’loggedin’ with the value=0. Let’s try changing the value to 1 (by double-clicking on it) and refreshing the page.```
