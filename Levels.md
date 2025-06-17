@@ -46,3 +46,10 @@ Access granted. The password for natas5 is 0n35PkggAPm2zbEpOU802c0x0Msn1ToK #you
 ```
 # Level 5
 ```Visiting the website returns the following text: “Access disallowed. You are not logged in”. The website should determine that we are logged in through a cookie. So, by opening the developer tools and going to the ‘Storage’ tab, we can see the ‘Cookies’ section. Here we find a cookie named ’loggedin’ with the value=0. Let’s try changing the value to 1 (by double-clicking on it) and refreshing the page.```
+
+# Level 6 
+if you take a look into source code that handles `input` you find something like this 
+`include "includes/secret.inc"include "includes/secret.inc"` it means that it inludes another php file to get key from it,
+and now we should do it manually `http://natas6.natas.labs.overthewire.org/index-source.html/include/secret.inc` its just a white/black screen 
+check inspector and you find key
+
