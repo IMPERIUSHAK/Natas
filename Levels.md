@@ -74,3 +74,7 @@ echo b3ViV1lmMmtCcQ== | base64 -d
 
 oubWYf2kBq  #key   
 ```
+# Level 9 
+so solve this case we should use `comanline injection`
+as you could see in source code that input value directly goes through db without any hiccups
+`; cat /etc/natas_webpass/natas10 #`--> Key to next level
