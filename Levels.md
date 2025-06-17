@@ -53,3 +53,9 @@ if you take a look into source code that handles `input` you find something like
 and now we should do it manually `http://natas6.natas.labs.overthewire.org/index-source.html/include/secret.inc` its just a white/black screen 
 check inspector and you find key
 
+# Level 7 
+Level 7 is bassically same as Level 6
+  * take a look into source code
+  * you will find something like this ` hint: password for webuser natas8 is in /etc/natas_webpass/natas8`
+  * and go this link via page `http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8`
+
