@@ -59,3 +59,18 @@ Level 7 is bassically same as Level 6
   * you will find something like this ` hint: password for webuser natas8 is in /etc/natas_webpass/natas8`
   * and go this link via page `http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8`
 
+# Level 8 
+Level 8 is same as level 6 but pin-code placed in the script you should decode it
+```
+ echo 3d3d516343746d4d6d6c315669563362 | xxd -r -p
+
+==QcCtmMml1ViV3b #decode hash to bin
+
+echo "==QcCtmMml1ViV3b" | rev #reverse
+
+b3ViV1lmMmtCcQ
+
+echo b3ViV1lmMmtCcQ== | base64 -d
+
+oubWYf2kBq  #key   
+```
