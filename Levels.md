@@ -82,3 +82,5 @@ as you could see in source code that input value directly goes through db withou
 # Level 10 
 Solution in this problem is use another method of injection
 `.* cat /etc/natas_webpass/natas11`
+ # Level 11
+ [link to solution](https://mcpa.github.io/natas/wargame/web/overthewire/2015/09/28/natas11/)
