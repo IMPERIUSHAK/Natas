@@ -93,11 +93,14 @@ Solution in this problem is use another method of injection
  `<?php echo shell_exec("ls");?>` but dont send it yet you need change in inspector type from jpg to php
  and than upload file it should execute. 
  So ones it worked you should change you script to `<?php echo shell_exec("cat /etc/natas_webpass/natas13");?>` 
+
  # Level13
  To solve this level we should create the same script in php.
 
- But if you look into source code, you will see some thing like this
-  `else if (! exif_imagetype($_FILES['uploadedfile']['tmp_name'])) echo "File is not an image";`
+But if you look into source code, you will see some thing like this
+ 
+`else if (! exif_imagetype($_FILES['uploadedfile']['tmp_name'])) echo "File is not an image";`
+
 so this line checks our image type while uploading, and if we just upload our php file we can get error
 
 exif_imagetype() - This PHP function reads the first few bytes of a file, sometimes known as “magic headers” to determine the file type. It won’t be fooled by just changing the file extension. If our file does not begin with the header bytes that indicate it actually is an image file, it will be rejected.
