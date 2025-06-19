@@ -86,9 +86,7 @@ as you could see in source code that input value directly goes through db withou
 Solution in this problem is use another method of injection
 `.* cat /etc/natas_webpass/natas11`
  # Level 11
- 
- [link to solution](https://mcpa.github.io/natas/wargame/web/overthewire/2015/09/28/natas11/)
-
+  ----
  # Level 12
  
  In this level you should create a php file on your pc and write own script to get pass
