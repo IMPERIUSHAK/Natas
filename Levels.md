@@ -106,6 +106,8 @@ exif_imagetype() - This PHP function reads the first few bytes of a file, someti
 
 no worries we can buypass it using [magic headers](https://en.wikipedia.org/wiki/List_of_file_signatures?ref=learnhacking.io)
 
-    
+![image](https://github.com/user-attachments/assets/ba43d976-2e7f-4de3-a171-3b8937977e16)
+lets pretend to be GIF
+
 ![image](https://github.com/user-attachments/assets/6f9dc512-7bff-4562-ac73-eefd76a7ee9c)
 
