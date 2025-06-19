@@ -96,6 +96,16 @@ Solution in this problem is use another method of injection
  and than upload file it should execute. 
  So ones it worked you should change you script to `<?php echo shell_exec("cat /etc/natas_webpass/natas13");?>` 
  # Level13
- 
+ To solve this level we should create the same script in php.
+
+ But if you look into source code, you will see some thing like this
+  `else if (! exif_imagetype($_FILES['uploadedfile']['tmp_name'])) echo "File is not an image";`
+so this line checks our image type while uploading, and if we just upload our php file we can get error
+
+exif_imagetype() - This PHP function reads the first few bytes of a file, sometimes known as “magic headers” to determine the file type. It won’t be fooled by just changing the file extension. If our file does not begin with the header bytes that indicate it actually is an image file, it will be rejected.
+
+no worries we can buypass it using [magic headers](https://en.wikipedia.org/wiki/List_of_file_signatures?ref=learnhacking.io)
+
+    
 ![image](https://github.com/user-attachments/assets/6f9dc512-7bff-4562-ac73-eefd76a7ee9c)
 
