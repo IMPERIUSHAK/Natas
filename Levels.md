@@ -135,6 +135,9 @@ The -- makes the rest of the query a comment.
 
 Now you understand how sql injection works:
 So to get into the Level14 we should do the same thing
-`http://natas14.natas.labs.overthewire.org/?debug=1&&username=admin"OR 1=1 --"&&password="admin`
+
+`http://natas14.natas.labs.overthewire.org/?e=1&&username=admin"OR 1=1 --"&&password="admin`
+
 ?--->means that we using Get request to get output 
+
 `OR 1=1 --`-->one the basic injection that always returns true(thats how we can bypass password)
